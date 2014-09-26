@@ -1,9 +1,9 @@
-ul{
+nav ul{
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
 }
-li{
+nav li{
 	list-style-type: none;
 	display: inline;
 }
@@ -11,3 +11,24 @@ img{
 	display: block;
 }
 	
+#menutree li {
+   list-style: none;          /* all list item li dots invisible */
+         }
+
+   li .menu_label + input[type=checkbox] {
+      opacity: 0;             /* checkboxes invisible and use no space */
+     }                        /* display: none; is better but fails in ie8 */
+
+    li .menu_label {
+      cursor: pointer;        /* cursor changes when you mouse over this class */
+    }                         /* could add the many user-select: none; commands here */
+
+      li .menu_label + input[type=checkbox] + ol > li
+         {
+            display: none;         /* prevents sublists below unchecked labels from displaying */
+         }
+
+      li .menu_label + input[type=checkbox]:checked + ol > li
+         {
+           display: block;         /* display submenu on click */
+         }
